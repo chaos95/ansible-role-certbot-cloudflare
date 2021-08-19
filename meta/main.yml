@@ -26,6 +26,6 @@ galaxy_info:
 
 dependencies:
     - src: geerlingguy.pip
-      version: 1.2.2
-    - { role: geerlingguy.certbot, certbot_certs: [], version: 3.0.1 }
+      version: 2.1.0
+    - { role: geerlingguy.certbot, certbot_certs: [], version: 4.1.0 }
       
