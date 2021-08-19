@@ -7,8 +7,8 @@ Requirements
 ------------
 
 - Cloudflare DNS setup
-- Cloudflare API Key
-- Wildcard domian setup (for wildcard certs) [*.domain.com or *.subdomain.domain.com]
+- Cloudflare API Key and email address, or Cloudflare API Token
+- Wildcard domain setup (for wildcard certs) [*.domain.com or *.subdomain.domain.com]
 
 Role Variables
 --------------
@@ -19,7 +19,11 @@ Your Cloudflare email address
 
     certbot_cloudflare_api_key: ''
 
-Your Cloudflare Global API Key, optionally encryped `ansible-vault encrypt_string 'cloudflareAPIKey' --name 'certbot_cloudflare_api_key'`
+Your Cloudflare Global API Key, optionally encrypted `ansible-vault encrypt_string 'cloudflareAPIKey' --name 'certbot_cloudflare_api_key'`
+
+    certbot_cloudflare_api_token: ''
+
+Your Cloudflare Global API Key, optionally encrypted `ansible-vault encrypt_string 'cloudflareAPIToken' --name 'certbot_cloudflare_api_token'`
 
     certbot_certs:
       - email: {{certbot_cloudflare_email}}
