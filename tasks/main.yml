@@ -2,6 +2,7 @@
 # tasks file for certbot-cloudflare
 
 - name: Get software for apt repository management.
+  when: ansible_facts['os_family'] == "Debian"
   apt: name={{ item }} state=present
   with_items:
     - build-essential
@@ -11,6 +12,19 @@
     - python-apt
     - python-dev
     - python-pycurl
+
+- name: Get package build requirements for RedHat-flavored systems
+  when: ansible_facts['os_family'] == "RedHat"
+  dnf: name={{ item }} state=present
+  with_items:
+    - python3-devel
+    - gcc
+    - augeas-libs
+    - openssl-devel
+    - libffi-devel
+    - redhat-rpm-config
+    - ca-certificates
+    - openssl
 
 - name: check if certbot-dns-cloudflare plugin is installed
   shell: certbot plugins | grep dns-cloudflare

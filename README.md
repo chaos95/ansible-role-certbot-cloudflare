@@ -73,5 +73,5 @@ MIT / BSD
 Author Information
 ------------------
 
-This role was created in 2018 by [Michael Porter](https://www.michaelpporter.com/).
+This role was created in 2018 by [Michael Porter](https://www.michaelpporter.com/). Further modifications in 2021 by Morgan Larosa.
 
